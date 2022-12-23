@@ -8,6 +8,7 @@ public class Bot
     private readonly FlickrAPI _flickrApi;
     private readonly TelegramBotClient _botClient;
 
+    
     public Bot(string token, FlickrAPI flickrApi)
     {
         _flickrApi = flickrApi;
