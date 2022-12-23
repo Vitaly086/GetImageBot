@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/vitaly/RiderProjects/ImagesBot_notion/ImagesBot_notion/ImagesBot_notion.csproj": {}
+  },
+  "projects": {
+    "/Users/vitaly/RiderProjects/ImagesBot_notion/ImagesBot_notion/ImagesBot_notion.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/vitaly/RiderProjects/ImagesBot_notion/ImagesBot_notion/ImagesBot_notion.csproj",
+        "projectName": "ImagesBot_notion",
+        "projectPath": "/Users/vitaly/RiderProjects/ImagesBot_notion/ImagesBot_notion/ImagesBot_notion.csproj",
+        "packagesPath": "/Users/vitaly/.nuget/packages/",
+        "outputPath": "/Users/vitaly/RiderProjects/ImagesBot_notion/ImagesBot_notion/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/vitaly/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "FlickrNet": {
+              "target": "Package",
+              "version": "[4.0.4-alpha, )"
+            },
+            "Telegram.Bot": {
+              "target": "Package",
+              "version": "[19.0.0-preview.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/vitaly/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
