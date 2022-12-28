@@ -1,16 +1,12 @@
 using FlickrNet;
 
-public class FlickrAPI
+public static class FlickrAPI
 {
-    private readonly Flickr _flickr;
-    private readonly Random _random = new Random();
-
-    public FlickrAPI(string apiKey)
-    {
-        _flickr = new Flickr(apiKey);
-    }
+    private static readonly Flickr _flickr = new Flickr("c77b1b60abbb5751a82a01e545280c8d");
+    private static readonly Random _random = new Random();
     
-    public async Task<string> GetPhotoUrlAsync(string request)
+    
+    public static async Task<string> GetPhotoUrlAsync(string request)
     {
         var photoSearchOptions = new PhotoSearchOptions
         {

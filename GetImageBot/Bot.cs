@@ -5,20 +5,14 @@ using Telegram.Bot.Types.Enums;
 
 public class Bot
 {
-    private readonly FlickrAPI _flickrApi;
     private readonly TelegramBotClient _botClient;
 
-    public Bot(string token, FlickrAPI flickrApi)
+    public Bot(string token)
     {
-        _flickrApi = flickrApi;
         _botClient = new TelegramBotClient(token);
-
-        CreateCommands();
-        StartReceiving();
-        Console.ReadLine();
     }
 
-    private void CreateCommands()
+    public void CreateCommands()
     {
         _botClient.SetMyCommandsAsync(new List<BotCommand>()
         {
@@ -35,7 +29,7 @@ public class Bot
         });
     }
 
-    private void StartReceiving()
+    public void StartReceiving()
     {
         var cancellationTokenSource = new CancellationTokenSource();
         var cancellationToken = cancellationTokenSource.Token;
@@ -109,7 +103,7 @@ public class Bot
 
     private async Task SendPhotoAsync(long chatId, string request, CancellationToken cancellationToken)
     {
-        var photoUrl = await _flickrApi.GetPhotoUrlAsync(request);
+        var photoUrl = await FlickrAPI.GetPhotoUrlAsync(request);
         await _botClient.SendPhotoAsync(chatId: chatId,
             photo: new InputFileUrl(photoUrl),
             cancellationToken: cancellationToken);
