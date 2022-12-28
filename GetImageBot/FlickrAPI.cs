@@ -2,7 +2,7 @@ using FlickrNet;
 
 public static class FlickrAPI
 {
-    private static readonly Flickr _flickr = new Flickr("c77b1b60abbb5751a82a01e545280c8d");
+    private static readonly Flickr _flickr = new Flickr("ВАШ ТОКЕН");
     private static readonly Random _random = new Random();
     
     

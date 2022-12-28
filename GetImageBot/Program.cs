@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-        var bot = new Bot("5899586717:AAFHiuFz6Hp5hl4h150jkqNzWZIvvd5cCkk");
+        var bot = new Bot("ВАШ ТОКЕН");
         
         bot.CreateCommands();
         bot.StartReceiving();
