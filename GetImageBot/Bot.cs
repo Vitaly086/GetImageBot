@@ -36,8 +36,7 @@ public class Bot
 
         var receiverOptions = new ReceiverOptions
         {
-            // разрешено получать все виды апдейтов
-            AllowedUpdates = new UpdateType[] { }
+            AllowedUpdates = new UpdateType[] { UpdateType.Message }
         };
         _botClient.StartReceiving(
             HandleUpdateAsync,
