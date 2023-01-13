@@ -102,9 +102,20 @@ public class Bot
 
     private async Task SendPhotoAsync(long chatId, string request, CancellationToken cancellationToken)
     {
-        var photoUrl = await FlickrAPI.GetPhotoUrlAsync(request);
-        await _botClient.SendPhotoAsync(chatId: chatId,
-            photo: new InputFileUrl(photoUrl),
-            cancellationToken: cancellationToken);
+        try
+        {
+            var photoUrl = await FlickrAPI.GetPhotoUrlAsync(request);
+            await _botClient.SendPhotoAsync(chatId: chatId,
+                photo: new InputFileUrl(photoUrl),
+                cancellationToken: cancellationToken);
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine(exception);
+            
+            await _botClient.SendTextMessageAsync(chatId,
+                "Изображений не найдено.",
+                cancellationToken: cancellationToken);
+        }
     }
 }
