@@ -17,6 +17,11 @@ public static class FlickrAPI
         PhotoCollection photos = await _flickr.PhotosSearchAsync(photoSearchOptions);
         var listPhotos = photos.ToList();
 
+        if (listPhotos.Count == 0)
+        {
+            return null;
+        }
+
         var randomPhotos = _random.Next(0, listPhotos.Count);
         return listPhotos[randomPhotos].LargeUrl;
     }
